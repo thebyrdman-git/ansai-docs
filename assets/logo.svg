@@ -1,0 +1,7 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Simple geometric logo: triangle (Ansible) + circle (AI) -->
+    <circle cx="30" cy="30" r="28" stroke="#ee0000" stroke-width="2" opacity="0.3"/>
+    <path d="M30 10 L50 45 L10 45 Z" stroke="#ee0000" stroke-width="2" fill="none"/>
+    <circle cx="30" cy="35" r="4" fill="#ee0000"/>
+</svg>
+
