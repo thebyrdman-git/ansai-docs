@@ -1,8 +1,13 @@
 # Netlify configuration for Ansai Documentation
-# Serves pre-built MkDocs site (no build needed)
+# Deploy Red Hat-style documentation to ansai.dev
 
 [build]
-  publish = "."
+  base = "docs/"
+  publish = "site/"
+  command = "pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-print-site-plugin && mkdocs build"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
 
 # Redirect rules
 [[redirects]]
@@ -23,6 +28,7 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://polyfill.io; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://polyfill.io https://www.googletagmanager.com;"
 
 # Cache control
 [[headers]]
@@ -45,3 +51,4 @@
   from = "/*"
   to = "/404.html"
   status = 404
+
